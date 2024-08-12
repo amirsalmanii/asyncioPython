@@ -18,7 +18,6 @@ def fibonacci_recursive(n):
 
 if __name__ == '__main__':
 
-    
     processes = [
         Process(target=go_to_sleep, args=[30]) for i in range(10)
     ]

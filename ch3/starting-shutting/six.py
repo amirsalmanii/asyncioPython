@@ -9,14 +9,15 @@ async def main():
     for sig in (SIGINT,SIGTERM):
         loop.add_signal_handler(sig, handler, sig)
 
-    while True:
-        try:
+   
+    try:
+        while True:
             print("You Application is Running...")
             await asyncio.sleep(1)
-        except asyncio.CancelledError:
-            for i in range(3):
-                print("You Application is Shutting Down...")
-                await asyncio.sleep(1)
+    except asyncio.CancelledError:
+        for i in range(3):
+            print("You Application is Shutting Down...")
+            await asyncio.sleep(1)
             
 
 def handler(sig):
